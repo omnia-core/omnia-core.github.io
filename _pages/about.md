@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: About Me
 permalink: /about
 comments: true
 ---
@@ -8,16 +8,32 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.</p>
+<p>Hi, I’m <strong>Kevin</strong>—a software engineer, tech enthusiast, and lifelong learner passionate about building and exploring the ever-evolving world of technology. 💻✨</p>
 
-<p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" /></p>
-<h4>Documentation</h4>
+<p>I started this blog to document my journey, share insights, and provide valuable resources for developers at all stages of their careers. Whether you're just starting out in tech, looking for tips and tricks, or seeking inspiration for your next big project, you’ve come to the right place!</p>
 
-<p>Please, read the docs <a href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/">here</a>.</p>
 
-<h4>Questions or bug reports?</h4>
+<h5>What You'll Find Here</h5>
+<ul>
+    <li><strong>Go (Golang) Tips and Troubleshooting:</strong> Deep dives into Go’s features, tips for mastering the language, and solutions to common challenges.</li>
+    <li><strong>Project Insights:</strong> Behind-the-scenes looks at projects I’m working on or tools I’ve built.</li>
+    <li><strong>Tech Musings:</strong> Reflections on trends, ideas, and the future of technology.</li>
+    <li><strong>Career & Community:</strong> Thoughts on career growth, personal development, and contributing to the tech community.</li>
+</ul>
 
-<p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p>
+<h5>My Mission</h5>
+<p>I believe in the power of sharing knowledge and building a supportive developer community. My goal is to create content that informs, inspires, and empowers you to grow in your tech journey.</p>
+
+
+<h5>A Little More About Me</h5>
+<p>When I’m not coding or writing, you’ll likely find me:</p>
+<ul>
+    <li>Experimenting with new tech tools and frameworks</li>
+    <li>Playing basketball 🏀</li>
+    <li>Enjoying a good cup of coffee ☕ or binge-watching Netflix</li>
+</ul>
+
+<p>Thanks for visiting, and I hope you find something here that inspires or helps you. Happy coding, and happy Go-ing! 🐹✨</p>
 
 </div>
 
@@ -26,9 +42,9 @@ comments: true
 <div class="sticky-top sticky-top-80">
 <h5>Buy me a coffee</h5>
 
-<p>Thank you for your support! Your donation helps me to maintain and improve <a target="_blank" href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Mediumish <i class="fab fa-github"></i></a>.</p>
+<p>Thank you for your support! Your donation helps me to maintain and improve Omnia Blog.</p>
 
-<a target="_blank" href="https://www.wowthemes.net/donate/" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/" class="btn btn-warning">Documentation</a>
+<a target="_blank" href="https://www.wowthemes.net/donate/" class="btn btn-danger">Buy me a coffee</a> 
 
 </div>
 </div>
