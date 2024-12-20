@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/apple-touch-icon.png">
+
+<title>Fun and Surprising Go Facts You Probably Didn’t Know! | Omnia</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fun and Surprising Go Facts You Probably Didn’t Know! | Omnia</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Fun and Surprising Go Facts You Probably Didn’t Know!" />
+<meta name="author" content="kevin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here are some lesser-known Go (Golang) facts that even go developers might not know:" />
+<meta property="og:description" content="Here are some lesser-known Go (Golang) facts that even go developers might not know:" />
+<link rel="canonical" href="http://localhost:4000/fun-go-facts/" />
+<meta property="og:url" content="http://localhost:4000/fun-go-facts/" />
+<meta property="og:site_name" content="Omnia" />
+<meta property="og:image" content="http://localhost:4000/assets/images/gopher.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-12T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/gopher.png" />
+<meta property="twitter:title" content="Fun and Surprising Go Facts You Probably Didn’t Know!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kevin"},"dateModified":"2024-12-12T00:00:00+09:00","datePublished":"2024-12-12T00:00:00+09:00","description":"Here are some lesser-known Go (Golang) facts that even go developers might not know:","headline":"Fun and Surprising Go Facts You Probably Didn’t Know!","image":"http://localhost:4000/assets/images/gopher.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/fun-go-facts/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/apple-touch-icon.png"},"name":"kevin"},"url":"http://localhost:4000/fun-go-facts/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914240913191564"
+     crossorigin="anonymous"></script>
+
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSX1QMJC9G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FSX1QMJC9G');
+</script>
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/apple-touch-icon.png" alt="Omnia">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Omnia</h1>
+    <p class="lead">
+        A blog for all things tech
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Fun and Surprising Go Facts You Probably Didn’t Know!&url=http://localhost:4000/fun-go-facts/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/fun-go-facts/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/fun-go-facts/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/f1eea0082761fcd8e82ebd8aa6de5410?s=250&d=mm&r=x" alt="Kevin">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://omnia-core.github.io">Kevin</a><a target="_blank" href="" class="btn follow">Follow</a>
+                        <span class="author-description">Author of Omnia Blog.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Fun and Surprising Go Facts You Probably Didn’t Know!</h1>
+
+            </div>
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/gopher.png" alt="Fun and Surprising Go Facts You Probably Didn’t Know!">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Here are some <strong>lesser-known Go (Golang) facts</strong> that even go developers might not know:</p>
+
+<hr />
+
+<h2 id="1-gos-nil-has-its-own-quirks"><strong>1. Go’s <code class="language-plaintext highlighter-rouge">nil</code> Has Its Own Quirks</strong></h2>
+<p>In Go, the <code class="language-plaintext highlighter-rouge">nil</code> value behaves unexpectedly when applied to <strong>interfaces</strong>. An interface can be <code class="language-plaintext highlighter-rouge">nil</code>, but its underlying type and value also determine how <code class="language-plaintext highlighter-rouge">nil</code> behaves.</p>
+
+<p>Example:</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="n">i</span> <span class="k">interface</span><span class="p">{}</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="kt">int</span><span class="p">)(</span><span class="no">nil</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"i is nil"</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"i is NOT nil"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Output</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>i is NOT nil
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Why? Because while the underlying value is <code class="language-plaintext highlighter-rouge">nil</code>, the interface itself still holds a <em>type</em> (<code class="language-plaintext highlighter-rouge">*int</code>) and isn’t considered completely nil.</p>
+
+<hr />
+
+<h2 id="2-gos-defer-uses-lifo-last-in-first-out"><strong>2. Go’s <code class="language-plaintext highlighter-rouge">defer</code> Uses LIFO (Last-In, First-Out)</strong></h2>
+<p>When multiple <code class="language-plaintext highlighter-rouge">defer</code> statements are used, they are executed in reverse order — like a stack.</p>
+
+<p>Example:</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"1"</span><span class="p">)</span>
+    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"2"</span><span class="p">)</span>
+    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"3"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Output</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>3
+2
+1
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This LIFO execution order is intentional and can be used strategically, such as ensuring resources are released in the opposite order they were acquired.</p>
+
+<hr />
+
+<h2 id="3-go-has-a-built-in-memory-alignment-trick"><strong>3. Go Has a Built-in Memory Alignment Trick</strong></h2>
+<p>Go automatically aligns fields in a struct to optimize memory usage, but <strong>the order of fields matters</strong>.</p>
+
+<p>Example:</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">type</span> <span class="n">Example</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">A</span> <span class="kt">byte</span>
+    <span class="n">B</span> <span class="kt">int64</span>
+    <span class="n">C</span> <span class="kt">byte</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Here, Go will add <strong>padding</strong> between fields to maintain memory alignment, resulting in more memory consumption than expected. Rearranging the fields can fix this:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="k">type</span> <span class="n">ExampleOptimized</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">B</span> <span class="kt">int64</span>
+    <span class="n">A</span> <span class="kt">byte</span>
+    <span class="n">C</span> <span class="kt">byte</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Size of Misaligned struct: %d bytes</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Sizeof</span><span class="p">(</span><span class="n">Misaligned</span><span class="p">{}))</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Size of Aligned struct: %d bytes</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Sizeof</span><span class="p">(</span><span class="n">Aligned</span><span class="p">{}))</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Field offsets in Misaligned struct:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"A: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Misaligned</span><span class="p">{}</span><span class="o">.</span><span class="n">A</span><span class="p">))</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"B: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Misaligned</span><span class="p">{}</span><span class="o">.</span><span class="n">B</span><span class="p">))</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"C: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Misaligned</span><span class="p">{}</span><span class="o">.</span><span class="n">C</span><span class="p">))</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Field offsets in Aligned struct:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"B: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Aligned</span><span class="p">{}</span><span class="o">.</span><span class="n">B</span><span class="p">))</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"A: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Aligned</span><span class="p">{}</span><span class="o">.</span><span class="n">A</span><span class="p">))</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"C: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">.</span><span class="n">Offsetof</span><span class="p">(</span><span class="n">Aligned</span><span class="p">{}</span><span class="o">.</span><span class="n">C</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Output</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>Size of Example struct: 24 bytes
+Size of ExampleOptimized struct: 16 bytes
+
+Field offsets in Example struct:
+A: 0
+B: 8
+C: 16
+
+Field offsets in ExampleOptimized struct:
+B: 0
+A: 8
+C: 9
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>By grouping fields of similar size together, you can reduce memory usage significantly.</p>
+
+<hr />
+
+<h2 id="4-gos-empty-slice-isnt-always-nil"><strong>4. Go’s Empty Slice Isn’t Always <code class="language-plaintext highlighter-rouge">nil</code></strong></h2>
+<p>An uninitialized slice is <code class="language-plaintext highlighter-rouge">nil</code>, but a slice created with <code class="language-plaintext highlighter-rouge">make()</code> or an empty literal is <strong>not <code class="language-plaintext highlighter-rouge">nil</code></strong>, even if it has no elements.</p>
+
+<p>Example:</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="n">s1</span> <span class="p">[]</span><span class="kt">int</span>
+<span class="n">s2</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">s3</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s1</span> <span class="o">==</span> <span class="no">nil</span><span class="p">)</span> <span class="c">// true</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s2</span> <span class="o">==</span> <span class="no">nil</span><span class="p">)</span> <span class="c">// false</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s3</span> <span class="o">==</span> <span class="no">nil</span><span class="p">)</span> <span class="c">// false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Understanding this distinction is critical when writing code that checks for “empty slices.”</p>
+
+<hr />
+
+<h2 id="5-gos-complex-select-behavior-in-deadlocks"><strong>5. Go’s Complex <code class="language-plaintext highlighter-rouge">select</code> Behavior in Deadlocks</strong></h2>
+<p>Go’s <code class="language-plaintext highlighter-rouge">select</code> statement, while powerful, has edge cases that can lead to unexpected behavior, especially with deadlocks. If all channels in a <code class="language-plaintext highlighter-rouge">select</code> block are blocked and there is no <code class="language-plaintext highlighter-rouge">default</code> case, the program <strong>deadlocks</strong>, but Go’s runtime handles this differently depending on the context.</p>
+
+<p>Example:</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ch1</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="kt">int</span><span class="p">)</span>
+    <span class="n">ch2</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="kt">int</span><span class="p">)</span>
+
+    <span class="k">go</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">1</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span><span class="p">)</span>
+        <span class="n">ch1</span> <span class="o">&lt;-</span> <span class="m">42</span>
+    <span class="p">}()</span>
+
+    <span class="k">select</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">val</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="n">ch1</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Received from ch1:"</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">val</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="n">ch2</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Received from ch2:"</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Behavior:</strong> If neither channel is ready and there’s no <code class="language-plaintext highlighter-rouge">default</code> case, the <code class="language-plaintext highlighter-rouge">select</code> blocks indefinitely. However, Go’s runtime avoids spinning CPU cycles inefficiently and places the goroutine into a sleep state until one of the channels becomes available. This behavior is subtle and can lead to tricky bugs when reasoning about concurrency.</p>
+
+<hr />
+
+            </div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2024-12-12">12 Dec 2024</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Fun-Facts">Fun Facts</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Go">Go</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'omnia-core'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Go">Go (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Fun-Facts">Fun Facts (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2024 Omnia 
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//omnia-core.disqus.com/count.js"></script>
+
+
+</body>
+</html>
