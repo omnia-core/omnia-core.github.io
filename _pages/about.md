@@ -44,7 +44,7 @@ comments: true
 
 <p>Thank you for your support! Your donation helps me to maintain and improve Omnia Blog.</p>
 
-<a target="_blank" href="https://www.wowthemes.net/donate/" class="btn btn-danger">Buy me a coffee</a> 
+<a target="_blank" href="https://ko-fi.com/kevinhwang1227" class="btn btn-danger">Buy me a coffee</a> 
 
 </div>
 </div>
