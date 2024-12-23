@@ -4,7 +4,7 @@ title: "Omnia"
 description: "A blog for all things tech"
 logo: 'assets/images/apple-touch-icon.png'
 favicon: 'assets/images/favicon.ico'
-disqus: "omnia-core"
+disqus: "omnia-blog"
 include: ["_pages"]
 permalink: /:title/
 
