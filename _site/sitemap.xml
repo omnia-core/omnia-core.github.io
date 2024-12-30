@@ -9,6 +9,10 @@
 <lastmod>2024-12-23T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/openai-o3-model/</loc>
+<lastmod>2024-12-30T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
@@ -28,5 +32,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/category/troubleshooting/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/technology/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/ai/</loc>
 </url>
 </urlset>
