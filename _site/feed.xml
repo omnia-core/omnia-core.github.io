@@ -5,9 +5,190 @@
     <description>A blog for all things tech</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Dec 2024 15:10:33 +0900</pubDate>
-    <lastBuildDate>Mon, 30 Dec 2024 15:10:33 +0900</lastBuildDate>
+    <pubDate>Tue, 14 Jan 2025 13:33:36 +0900</pubDate>
+    <lastBuildDate>Tue, 14 Jan 2025 13:33:36 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>Managing Multiple GitHub Accounts for Multiple Projects</title>
+        <description>&lt;p&gt;If you’re working on multiple projects with different GitHub configurations, such as using separate user credentials (e.g., work and personal accounts), you can set up multiple configurations in Git. Here’s how to manage it step by step:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-set-up-ssh-keys-for-each-account&quot;&gt;1. Set Up SSH Keys for Each Account&lt;/h2&gt;
+
+&lt;p&gt;Generate separate SSH keys for each account:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# For personal account&lt;/span&gt;
+ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; ed25519 &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;your_personal_email@example.com&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Save as: ~/.ssh/id_ed25519_personal&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# For work account&lt;/span&gt;
+ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; ed25519 &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;your_work_email@example.com&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Save as: ~/.ssh/id_ed25519_work&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the SSH keys to your SSH agent:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;ssh-agent &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+ssh-add ~/.ssh/id_ed25519_personal
+ssh-add ~/.ssh/id_ed25519_work
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the public keys to their respective GitHub accounts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Copy the public key:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; ~/.ssh/id_ed25519_personal.pub
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; ~/.ssh/id_ed25519_work.pub
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Paste the key into the &lt;strong&gt;SSH and GPG keys&lt;/strong&gt; section on GitHub for each account.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-edit-ssh-config-file&quot;&gt;2. Edit SSH Config File&lt;/h2&gt;
+
+&lt;p&gt;Configure SSH to use the correct key for each GitHub account. Edit (or create) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.ssh/config&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;nano ~/.ssh/config
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# Personal GitHub account
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+
+# Work GitHub account
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-clone-repositories-using-the-correct-host&quot;&gt;3. Clone Repositories Using the Correct Host&lt;/h2&gt;
+
+&lt;p&gt;When cloning, specify the alias (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-personal&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-work&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# For personal repository&lt;/span&gt;
+git clone git@github-personal:username/repository.git
+
+&lt;span class=&quot;c&quot;&gt;# For work repository&lt;/span&gt;
+git clone git@github-work:organization/repository.git
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you cloned the repository using default SSH key, you can use the following command to set the correct remote URL:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Clone the repository using default SSH key&lt;/span&gt;
+git clone git@github.com:username/repository.git
+
+&lt;span class=&quot;c&quot;&gt;# Set the correct remote URL&lt;/span&gt;
+git remote set-url origin git@github-personal:username/repository.git
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4-set-global-and-local-git-configurations&quot;&gt;4. Set Global and Local Git Configurations&lt;/h2&gt;
+
+&lt;p&gt;Set the global Git configuration for your personal account:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;s2&quot;&gt;&quot;Personal Name&quot;&lt;/span&gt;
+git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email &lt;span class=&quot;s2&quot;&gt;&quot;your_personal_email@example.com&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Override with local configuration for work projects:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /path/to/work-project
+git config user.name &lt;span class=&quot;s2&quot;&gt;&quot;Work Name&quot;&lt;/span&gt;
+git config user.email &lt;span class=&quot;s2&quot;&gt;&quot;your_work_email@example.com&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-test-the-configuration&quot;&gt;5. Test the Configuration&lt;/h2&gt;
+
+&lt;p&gt;Check the current configuration in a project:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git config user.name
+git config user.email
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Push to verify the correct credentials are being used:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git push
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;tips&quot;&gt;Tips&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you’re using HTTPS instead of SSH, use Git credentials cache or a credentials manager to differentiate accounts.&lt;/li&gt;
+  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt; to ensure you’re pushing to the correct remote URL (personal or work).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By following these steps, you can seamlessly manage multiple GitHub accounts across different projects. Let me know if you have any questions or run into issues!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Jan 2025 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/multiple-github-accounts/</link>
+        <guid isPermaLink="true">http://localhost:4000/multiple-github-accounts/</guid>
+        
+        
+        <category>Github</category>
+        
+        <category>Tips</category>
+        
+      </item>
     
       <item>
         <title>The Monumental Leap: Reviewing OpenAI&apos;s o3 Model</title>
