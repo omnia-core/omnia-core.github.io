@@ -5,7 +5,7 @@ description: "A blog for all things tech"
 logo: 'assets/images/apple-touch-icon.png'
 favicon: 'assets/images/favicon.ico'
 disqus: "omnia-blog"
-include: ["_pages"]
+include: ["_pages", "google306b90528ceba09b.html"]
 permalink: /:title/
 
 # Authors
