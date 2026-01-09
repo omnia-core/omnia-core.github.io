@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main # or master, depending on your default branch
+
+# Media files will be stored in assets/images
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# The site URL (update after deploying to Netlify)
+site_url: https://omnia-core.netlify.app
+display_url: https://omnia-core.netlify.app
+
+# Logo in the admin panel
+logo_url: /assets/images/apple-touch-icon.png
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "select", options: ["kevin"], default: "kevin" }
+      - { label: "Categories", name: "categories", widget: "list", default: ["Technology"] }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
